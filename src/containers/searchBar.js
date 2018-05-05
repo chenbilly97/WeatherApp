@@ -35,7 +35,7 @@ class SearchBar extends Component {
          onChange={this.onInputChange}
          />
         <div className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
+          <button type="submit" className="btn btn-secondary">Search</button>
        </div>
          </form>
       </div>
