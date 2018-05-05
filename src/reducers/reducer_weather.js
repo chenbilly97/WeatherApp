@@ -1,15 +1,16 @@
 import {FETCH_WEATHER} from '../actions/fetchWeather';
-
+var set = [];
 export default function(state=[],action) {
   switch(action.type)
   {
     case FETCH_WEATHER:
-      if (action.payload.data !== undefined)
+      if (action.payload.data !== undefined && !set.includes(action.payload.data.city.name))
       {
-         return [action.payload.data,...state];
+           set.push(action.payload.data.city.name);
+           return [action.payload.data,...state];
        }
       else {
-        alert ("Cannot find weather data for this city");
+        alert ("Invalid city or city already in table");
         return state;
       }
     default :
